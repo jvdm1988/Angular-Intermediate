@@ -9,14 +9,23 @@
         it can handle both a click and hitting the "Enter" key -->
   <form (ngSubmit)="handleTheSubmission()">
     <label for="email-input"> Email </label>
-    <input  id="email-input" type="email" placeholder="blah@blah.com"
-            [(ngModel)]="theUser.fakeEmail">
+
+    <p class="error" *ngIf="emailMessage"> {{emailMessage }} </p>
+
+    <input id="email-input" type="email" name="fakeEmail" placeholder="blah@blah.com"
+            [(ngModel)]="theUser.fakeEmail"
+            (blur)="handleTheSubmission()">
+            <!-- "blur" happens when your cursor leaves an input -->
 
     <br>
 
+    <p class="error" *ngIf="passwordMessage"> {{passwordMessage }} </p>
+
     <label for="password-input"> Password </label>
-    <input  id="password-input" type="password" placeholder="*******"
-            [(ngModel)]="theUser.fakePassword">
+    <input  id="password-input" type="password" name="fakePassword" placeholder="*******"
+            [(ngModel)]="theUser.fakePassword"
+            (blur)="handleTheSubmission()">
+            <!-- "blur" happens when your cursor leaves an input -->
     <br>
 
     <button> Log In </button>

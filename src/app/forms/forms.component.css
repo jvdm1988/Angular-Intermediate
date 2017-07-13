@@ -2,3 +2,11 @@ section {
   border: 1px solid crimson;
   padding: 20px;
 }
+
+
+.error {
+  color: crimson;
+  border: 3px solid crimson;
+  border-radius: 3px;
+  padding: 15px;
+}
