@@ -1,5 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
-// import decorator is needed extra
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter // needed to make "Output" work
+  } from '@angular/core';
+
 
 @Component({
   selector: 'app-quote-item',
@@ -8,11 +14,20 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class QuoteItemComponent implements OnInit {
   // quoteInfo will be set by the parent when the component is displayed
-  @Input() quoteInfo: object;
+  @Input() quoteInfo: any;
+  @Output() onQuoteDelete = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  // tellParentToDeleteThis() is called when the button is clicked
+  tellParentToDeleteThis() {
+  // when the button is clicked, notify the parent
+  // emit is the thing that notifies the parent
+  this.onQuoteDelete.emit(this.quoteInfo);
+
   }
 
 }

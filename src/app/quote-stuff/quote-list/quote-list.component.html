@@ -5,6 +5,8 @@
 
 <ul>
   <li *ngFor="let oneQuote of allTheQuotes">
-    <app-quote-item [quoteInfo]="oneQuote"></app-quote-item>
+    <!-- <app-quote-item [quoteInfo]="oneQuote"></app-quote-item> -->
+    <app-quote-item (onQuoteDelete)="doSomething($event)"
+    [quoteInfo]="oneQuote"></app-quote-item>
   </li>
 </ul>

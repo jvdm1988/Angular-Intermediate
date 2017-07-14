@@ -1,11 +1,32 @@
 <header>
   <h1> Angular: Post-Basics </h1>
+
+
+<!-- These are bad because they will refresh the page -->
+<nav>
+  <a href="/"> BAD Quotes List </a>
+  <br>
+
+  <a href="/forms"> BAD Forms </a>
+<br>
+
+
+<!-- These are the GOOD links because they SPA -->
+<a [routerLink]="['/']"> GOOD Quotes List link </a>
+<br>
+
+<a [routerLink]="['/forms']"> GOOD Forms link </a>
+<br>
+
+<a [routerLink]="['/contacts']"> Contacts </a>
+<br>
+</nav>
+
 </header>
 
-<!-- "quote-list" will now display all the quotes -->
-<app-quote-list></app-quote-list>
-
-<app-forms></app-forms>
+<!-- This is kind of like the "<%- body %> in EJS layouts -->
+<router-outlet></router-outlet>
+<!-- Must be called router outlet -->
 
 <footer>
   <p> Made with 💕 at Ironhack </p>

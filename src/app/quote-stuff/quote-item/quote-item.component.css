@@ -9,3 +9,9 @@ small {
   color: #888;
   font-style: italic;
 }
+
+
+button {
+  background-color: red;
+  color: white;
+}

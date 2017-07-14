@@ -1,0 +1,15 @@
+<h2> Your Contacts </h2>
+
+<ul>
+  <li *ngFor="let oneContact of allTheContacts">
+    <h3> {{ oneContact.name }} </h3>
+
+<!-- Angular version of <a href="/contacts/<&= oneContact.id %>">  -->
+<!-- This route goes in the contacts components because route can only
+      be accessed through the contacts page. Have to see contacts first
+      to select a contact to view -->
+    <a [routerLink]="['/contacts', oneContact.id]">
+      View Details
+    </a>
+  </li>
+</ul>
