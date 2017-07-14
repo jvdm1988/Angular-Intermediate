@@ -1,0 +1,10 @@
+<!-- "quoteInfo" comes from quote-item.component.ts -->
+<!-- "quoteA, B, C" is the value we want to send in from the parent -->
+
+<h2> Quote List </h2>
+
+<ul>
+  <li *ngFor="let oneQuote of allTheQuotes">
+    <app-quote-item [quoteInfo]="oneQuote"></app-quote-item>
+  </li>
+</ul>
